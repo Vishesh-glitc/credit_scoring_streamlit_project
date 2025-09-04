@@ -157,7 +157,7 @@ if generate or company_name:
     # -----------------------------------------
     st.divider()
     section_header("📌 Risk & Alerts")
-    risk_cols = ["scoredAt","score","level","financial","payments","news","industryRisk","geoRisk","delta","pd","recommendedCL"]
+    risk_cols = ["scoredAt","score","level","financial","payments","news","industryRisk","geoRisk","delta","pd"]
     render_card_df("RiskScore", data.get("riskScore"), risk_cols)
     alert_cols = ["type","priority","createdAt","message","resolvedAt"]
     render_table("Alert", data.get("alerts"), alert_cols)
