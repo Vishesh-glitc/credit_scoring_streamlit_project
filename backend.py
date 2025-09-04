@@ -776,8 +776,7 @@ def fetch_company_report(name: str) -> Dict[str, Any]:
         "industryRisk": round(ind_sub, 2),
         "geoRisk": round(geo_sub, 2),
         "delta": 0.0,
-        "pd": round(_clamp(1.0 - score_0_100/100.0, 0.01, 0.25), 3),
-        "recommendedCL": f"₹{(score_0_100*1_00_000):,}",
+        "pd": round(_clamp(1.0 - score_0_100/100.0, 0.01, 0.25), 3)
     }
     # Ensure no empty fields in risk; default to 5 if missing/None
     for k in ["financial", "payments", "news", "industryRisk", "geoRisk"]:
