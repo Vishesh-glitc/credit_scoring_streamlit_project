@@ -99,7 +99,7 @@ if generate or company_name:
 
     # ----- Report header: logo + name + single PDF download button -----
     comp_obj = data.get("company") or {}
-    logo_url = data.get("logoUrl")
+    # logo_url = data.get("logoUrl")
     display_name = comp_obj.get("name") or company_name.strip() or "Company"
     website = comp_obj.get("website")
     pdf_filename = f"{display_name.replace(' ', '_')}_report.pdf"
@@ -112,8 +112,7 @@ if generate or company_name:
 
     header_cols = st.columns([0.9, 6.5, 2.6])
     with header_cols[0]:
-        if logo_url:
-            st.image(logo_url, caption="", width=88)
+        st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl3KRLQ-4_EdCiWdQ5WVmZBhS4HCHiTxV71A&s", caption="", width=88)
     with header_cols[1]:
         title_md = f"## {display_name} {'🌐' if website else ''}"
         st.markdown(title_md)
